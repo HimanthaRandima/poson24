@@ -60,16 +60,16 @@
 
 
             <div class="cta">
-                <button class="button-86" role="button">Digital Pandol</button>
+                <button href="#thorana" class="button-86">Digital Pandol</button>
             </div>
 
             <div class="rules">
-                <a href="acicts.lk">Participate Poson Competition ></a>
+                <a href="#submission">Participate Poson Competition ></a>
 
             </div>
         </section>
 
-        <section class="thorana" id="winners">
+        <section class="thorana" id="thorana">
 
 
             <h2>Digital Pandol</h2>
@@ -90,13 +90,175 @@
 
 
             <audio autoplay="true" id="theAudio" src="images/Torana_full_Mixdown_2_finale.mp3" controls loop="true"
-                style="align-self: center; margin-top: 2rem; font-size:1vw; visibility: visible; filter: sepia(30%) saturate(1%) grayscale(2) contrast(99%) invert(85%);"></audio>
+                style="align-self: center; margin-top: 2rem; margin-left: 2rem; margin-right: 2rem; visibility: visible; filter: sepia(30%) saturate(1%) grayscale(2) contrast(99%) invert(85%);"></audio>
 
 
 
 
 
         </section>
+
+
+
+
+
+        <section class="submission" id="submission">
+
+
+            <h2>Submit Your Project</h2>
+
+
+
+            <div class="back">
+
+                <div>
+
+                    <h1>Please make sure your project complies with <a href="#guidelines"
+                            style="text-decoration: underline;">submission guidelines</a> before submitting.</h1>
+                    <form class="cf" id="submissionForm">
+                        <div class="half left cf">
+                            <input type="name" id="input_name" placeholder="Name">
+                            <input type="email" id="input_email" inputmode="email" placeholder="Email address">
+                            <input type="number" id="input_subject" inputmode="numeric" placeholder="Whatasapp Number">
+                        </div>
+                        <div class="half right cf">
+                            <input type="url" id="input_url" inputmode="url" placeholder="Google Drive Link">
+                            <input type="grade" id="input_grade" placeholder="Grade">
+                            <textarea name="message" type="text" id="input_message"
+                                placeholder="Additional Remarks"></textarea>
+                        </div>
+                        <button class="input-submit" type="submit" id="input_submit">Submit</button>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <script type="module">
+
+            import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js'
+            import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js'
+            import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js'
+
+            const firebaseConfig = {
+                //....
+            };
+
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            const firestore = getFirestore(app);
+
+            const submissionsRef = collection(firestore, 'submission');
+
+            const form = document.getElementById('submissionForm');
+            const submitButton = document.getElementById('input_submit');
+
+            if (localStorage.getItem("Submited") === "Submited"){
+                submitButton.innerHTML = "You have already submitted";
+                        submitButton.disabled = true;
+            }
+
+            submitButton.addEventListener('click', async (event) => {
+                event.preventDefault();
+
+                //const formData = new FormData(form);
+
+                submitButton.innerHTML = "Please wait...";
+                let hasEmptyField = false;
+
+
+                
+                const input_email = document.getElementById('input_email').value;
+                const input_subject = document.getElementById('input_subject').value;
+                const input_url = document.getElementById('input_url').value;
+                const input_grade = document.getElementById('input_grade').value;
+                const input_message = document.getElementById('input_message').value;
+                const input_name = document.getElementById('input_name').value;
+
+
+
+                let itemToAdd = {};
+
+                if (input_email === "") {
+                    hasEmptyField = true;
+                    
+                } else {
+                    itemToAdd.name = input_email;
+
+                    if (input_subject === "") {
+                        hasEmptyField = true;
+                        
+                    } else {
+                        itemToAdd.email = input_subject;
+
+                        if (input_url === "") {
+                            hasEmptyField = true;
+                        } else {
+                            itemToAdd.number = input_url;
+
+                            if (input_grade === "") {
+                                hasEmptyField = true;
+                            } else {
+                                itemToAdd.url = input_grade;
+
+                                if (input_message === "") {
+
+                                    hasEmptyField = true;
+                                } else {
+                                    itemToAdd.grade = input_message;
+
+                                    if (input_name === "") {
+
+                                        hasEmptyField = true;
+                                    } else {
+                                        itemToAdd.message = input_name;
+
+
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+
+
+
+
+                if (!hasEmptyField) {
+                    try {
+                        await addDoc(submissionsRef, itemToAdd);
+                        //console.log("Item added:", itemToAdd);
+                        alert("Your submission has been recorded");
+                        submitButton.innerHTML = "SUBMITTED";
+                        submitButton.disabled = true;
+                        localStorage.setItem("Submited", "Submited");
+                        form.reset(); // Clear form after successful submission
+                    } catch (error) {
+                        alert("Error. Try again later...");
+                        submitButton.innerHTML = "TRY AGAIN";
+                        console.error("Error adding item:", error);
+                    }
+                } else {
+                    alert("Please enter your fields");
+                    submitButton.innerHTML = "TRY AGAIN";
+                }
+
+
+               
+
+
+            });
+
+
+        </script>
 
 
 

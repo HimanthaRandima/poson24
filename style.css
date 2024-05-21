@@ -203,6 +203,135 @@ nav {
 }
 
 
+.submission {
+  background-color: transparent;
+  color: #f9f8ef;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  -webkit-backdrop-filter: blur(5px);
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #EEC945;
+    text-shadow: 0 0 15px #EEC94580, 0 0 10px #EEC94580;
+  }
+
+
+
+  .back {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    margin-top: 2rem;
+    border-radius: 3rem;
+    border: 2px solid #EEC94580;
+    padding: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    box-shadow: 4px 0 32px 0 #eec9453a;
+
+  }
+
+
+
+  h1 {
+    text-align: center;
+    color: #a8a8a8;
+    
+  }
+
+  form {
+    max-width: 1000px;
+    text-align: center;
+    border-radius: 100px;
+    margin: 20px auto;
+
+    input,
+    textarea,
+    button {
+      border: 0;
+      outline: 0;
+      padding: 1em;
+      border-radius: 8px;
+      background-color: transparent;
+      color: white;
+      display: block;
+      width: 100%;
+      margin-top: 1em;
+      font-family: 'Popins', sans-serif;
+      box-shadow: 4px 0 32px 0 #eec9453a;
+      resize: none;
+  
+
+      &:focus {
+        box-shadow: 4px 0 32px 0 #eec9453a;
+      }
+    }
+
+    .input-submit {
+      color: white;
+      background: #EEC94580;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 4px 0 32px 0 #eec9453a;
+      }
+    }
+
+    textarea {
+      height: 100px;
+    }
+  }
+
+
+  .half {
+    float: left;
+    width: 48%;
+    margin-bottom: 1em;
+  }
+
+  .right {
+    width: 50%;
+  }
+
+  .left {
+    margin-right: 2%;
+    height: 100%;
+  }
+
+
+  @media (max-width: 800px) {
+    .half {
+      width: 100%;
+      float: none;
+      padding: -6em;
+      margin-bottom: 0;
+    }
+  }
+
+
+  /*
+  .cf:before,
+  .cf:after {
+    content: " ";
+    
+    display: table;
+    
+  }
+
+  .cf:after {
+    clear: both;
+  }
+
+  */
+
+
+
+}
+
+
 .thorana {
   background-color: transparent;
   color: #f9f8ef;

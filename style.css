@@ -136,6 +136,14 @@ nav {
   background: linear-gradient(180deg, #250a01 1%, rgba(13, 13, 36, 0) 1000%), url("./assets/lanten.png") no-repeat center bottom;
   background-size: cover;
 
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #EEC945;
+    text-shadow: 0 0 15px #EEC94580, 0 0 10px #EEC94580;
+  }
+
 }
 
 .landing {

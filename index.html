@@ -15,11 +15,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
     <link href="./style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png" />
     <title>ACICTS Digital Poson Zone</title>
@@ -45,63 +40,37 @@
 
 
 
-    <main class="main_class">
-
-        
-        <section class="landing">
-
-
-
-            <div class="hero">
-                <h1>Digital Poson Zone</h1>
-            </div>
-
-
-            
-
-
-            <div>
-                
-
-            </div>
-
-            <h2>COMING SOON...</h2>
-
-           
-        </section>
-
-
-    </main>
-
-
-
-
-
-
     <!--
+    <main class="main_class">
+        <section class="landing">
+            <div class="hero">
+                <h1>Digital Poson Zone</h1>
+            </div>
+            <div>
+            </div>
+            <h2>COMING SOON...</h2>
+        </section>
+    </main>
+     -->
 
-    
+
     <main class="main_class">
 
-
-
-
-
         <section class="landing">
-
-
 
             <div class="hero">
                 <h1>Digital Poson Zone</h1>
             </div>
 
 
+            <a href="#thorana">
 
 
+                <div class="cta">
+                    <button class="button-86">Digital Pandol</button>
+                </div>
 
-            <div class="cta">
-                <button href="#thorana" class="button-86">Digital Pandol</button>
-            </div>
+            </a>
 
             <div class="rules">
                 <a href="#submission">Participate Poson Competition ></a>
@@ -113,8 +82,6 @@
 
 
             <h2>Digital Pandol</h2>
-
-
 
             <div class="back" onload="getComm()">
 
@@ -133,21 +100,11 @@
                 style="align-self: center; margin-top: 2rem; margin-left: 2rem; margin-right: 2rem; visibility: visible; filter: sepia(30%) saturate(1%) grayscale(2) contrast(99%) invert(85%);"></audio>
 
 
-
-
-
         </section>
-
-
-
-
 
         <section class="submission" id="submission">
 
-
             <h2>Submit Your Project</h2>
-
-
 
             <div class="back">
 
@@ -205,9 +162,9 @@
             const form = document.getElementById('submissionForm');
             const submitButton = document.getElementById('input_submit');
 
-            if (localStorage.getItem("Submited") === "Submited"){
+            if (localStorage.getItem("Submited") === "Submited") {
                 submitButton.innerHTML = "You have already submitted";
-                        submitButton.disabled = true;
+                submitButton.disabled = true;
             }
 
             submitButton.addEventListener('click', async (event) => {
@@ -219,7 +176,7 @@
                 let hasEmptyField = false;
 
 
-                
+
                 const input_email = document.getElementById('input_email').value;
                 const input_subject = document.getElementById('input_subject').value;
                 const input_url = document.getElementById('input_url').value;
@@ -228,18 +185,17 @@
                 const input_name = document.getElementById('input_name').value;
 
 
-
                 let itemToAdd = {};
 
                 if (input_email === "") {
                     hasEmptyField = true;
-                    
+
                 } else {
                     itemToAdd.name = input_email;
 
                     if (input_subject === "") {
                         hasEmptyField = true;
-                        
+
                     } else {
                         itemToAdd.email = input_subject;
 
@@ -283,7 +239,7 @@
                         await addDoc(submissionsRef, itemToAdd);
                         //console.log("Item added:", itemToAdd);
                         alert("Your submission has been recorded");
-                        submitButton.innerHTML = "SUBMITTED";
+                        submitButton.innerHTML = "Submitted";
                         submitButton.disabled = true;
                         localStorage.setItem("Submited", "Submited");
                         form.reset(); // Clear form after successful submission
@@ -294,11 +250,11 @@
                     }
                 } else {
                     alert("Please enter your fields");
-                    submitButton.innerHTML = "TRY AGAIN";
+                    submitButton.innerHTML = "Try Again";
                 }
 
 
-               
+
 
 
             });
@@ -367,7 +323,7 @@
                         both languages is not required.</li>
                     <li>You are allowed to use images from the internet. However, plagiarizing a design may result in
                         disqualification.</li>
-                    <li>The project submission period is from the 14th of June to the 19th of June</li>
+                    <li>The project submission period is from the 13th of June to the 19th of June</li>
                 </ul>
             </div>
             <div class="guidelines-section">
@@ -389,8 +345,7 @@
                 <ul>
                     <li>You should submit the final creation in .PNG or .JPG format and a screenshot taken during the
                         creation process.</li>
-                    <li>To submit your entry, please use the provided Google Form. Prior registration is not required.
-                    </li>
+
                     <li>Submissions in the improper format and submissions after the deadline may not be accepted.</li>
                 </ul>
             </div>
@@ -401,7 +356,7 @@
         </footer>
 
     </main>
--->
+
 
     <script>
         AOS.init();
@@ -415,558 +370,143 @@
 
     <script>
         var ww, hw;
-        ww = window.innerWidth;
-        hw = window.innerHeight;
-
-
-        var imageHolder = document.getElementById('ImageHolder');
-        var imageHolder1 = document.getElementById('ImageHolder1');
-        var imageHolder2 = document.getElementById('ImageHolder2');
-        var imageHolder3 = document.getElementById('ImageHolder3');
-        var imageHolder4 = document.getElementById('ImageHolder4');
-        var imageHolder5 = document.getElementById('ImageHolder5');
-        var imageHolder6 = document.getElementById('ImageHolder6');
-        var imageHolder7 = document.getElementById('ImageHolder7');
-        var imageHolder8 = document.getElementById('ImageHolder8');
-
-        var audioElement = document.getElementById("theAudio");
-        var currentTime;//audioElement.currentTime;
-
-        audioElement.onloadeddata = function () {
-            if (ww < hw) {
-                //mobile device
-                //audioElement.play();
-            } else {
-                // computer
-                //audioElement.play();
-            }
-            // alert("playing");
-        }
-
-        var times = [0, 5, 87, 124, 170, 213, 243, 330, 423, 460, 461]; // for descriptions
-        var timesImages = [0, 124, 170, 225, 236, 331, 372, 418, 426]; // for images
-        audioElement.ontimeupdate = function () {
-            currentTime = audioElement.currentTime;
-            if (currentTime >= times[0] && currentTime < times[1]) {
-                description.innerHTML = '';
-                description.innerHTML = description0.innerHTML;
-
-            } else if (currentTime >= times[1] && currentTime < times[2]) {
-                description.innerHTML = '';
-                description.innerHTML = description1.innerHTML;
-
-            } else if (currentTime >= times[2] && currentTime < times[3]) {
-                description.innerHTML = '';
-                description.innerHTML = description2.innerHTML;
-
-            } else if (currentTime >= times[3] && currentTime < times[4]) {
-                description.innerHTML = '';
-                description.innerHTML = description3.innerHTML;
-
-            } else if (currentTime >= times[4] && currentTime < times[5]) {
-                description.innerHTML = '';
-                description.innerHTML = description4.innerHTML;
-
-            } else if (currentTime >= times[5] && currentTime < times[6]) {
-                description.innerHTML = '';
-                description.innerHTML = description5.innerHTML;
-
-            } else if (currentTime >= times[6] && currentTime < times[7]) {
-                description.innerHTML = '';
-                description.innerHTML = description6.innerHTML;
-
-            } else if (currentTime >= times[7] && currentTime < times[8]) {
-                description.innerHTML = '';
-                description.innerHTML = description7.innerHTML;
-            } else if (currentTime >= times[8] && currentTime < times[9]) {
-                description.innerHTML = '';
-                description.innerHTML = description8.innerHTML;
-            } else if (currentTime >= times[9] && currentTime < times[10]) {
-                description.innerHTML = '';
-                description.innerHTML = description9.innerHTML;
-            } else {
-                description.innerHTML = '';
-                description.innerHTML = description9.innerHTML;
-
-            }
-            // change images
-            if (currentTime >= timesImages[0] && currentTime < timesImages[1]) {
-                // imageHolder.removeAttribute('src');
-                imageHolder.setAttribute('src', imageHolder1.src);
-            } else if (currentTime >= timesImages[1] && currentTime < timesImages[2]) {
-                imageHolder.setAttribute('src', imageHolder2.src);
-
-            } else if (currentTime >= timesImages[2] && currentTime < timesImages[3]) {
-                imageHolder.setAttribute('src', imageHolder3.src);
-
-            } else if (currentTime >= timesImages[3] && currentTime < timesImages[4]) {
-                imageHolder.setAttribute('src', imageHolder4.src);
-
-            } else if (currentTime >= timesImages[4] && currentTime < timesImages[5]) {
-                imageHolder.setAttribute('src', imageHolder5.src);
-
-            } else if (currentTime >= timesImages[5] && currentTime < timesImages[6]) {
-                imageHolder.setAttribute('src', imageHolder6.src);
-
-            } else if (currentTime >= timesImages[6] && currentTime < timesImages[7]) {
-                imageHolder.setAttribute('src', imageHolder7.src);
-
-            } else if (currentTime >= timesImages[7] && currentTime < timesImages[8]) {
-                imageHolder.setAttribute('src', imageHolder8.src);
-
-            } else if (currentTime >= timesImages[8] && currentTime < timesImages[9]) {
-                imageHolder.setAttribute('src', imageHolder8.src);
-
-            } else {
-                imageHolder.setAttribute('src', imageHolder8.src);
-
-            }
-        }
-
-
-
-        var myCanvas;
-        var canvasWidth, canvasHeight;
-
-        var w, h;
-        var context;
-        var r, R, z; //radius of circles and z = sin(pi/8)
-        var marginTop, marginBotom;
-        var cx = new Array();
-        var cy = new Array();
-        var pointSqx, pointSqy; // starting point of squre down
-        var dimPointSqx, dimPointSqy; // end point of squre down
-        var fractionOfDispSmall, fractionOfDispLarge //bulb display area as fraction of radius
-        var angleBC; 	//angle between box and botom circle center (c0)
-        var leftImgBoxStartX, leftImgBoxStartY, rightImgBoxStartX, rightImgBoxStartY; //starting coodinates of first image boxes
-        var leftImageBoxW, leftImageBoxH, rightImgBoxW, rightImgBoxH; // dimensions of image boxes	
-        var imageBoxPadding;
-        var pointX, pointY;
-
+        ww = window.innerWidth, hw = window.innerHeight;
+        var currentTime, myCanvas, canvasWidth, canvasHeight, w, h, context, r, R, z, marginTop, marginBotom, imageHolder = document.getElementById("ImageHolder"),
+            imageHolder1 = document.getElementById("ImageHolder1"),
+            imageHolder2 = document.getElementById("ImageHolder2"),
+            imageHolder3 = document.getElementById("ImageHolder3"),
+            imageHolder4 = document.getElementById("ImageHolder4"),
+            imageHolder5 = document.getElementById("ImageHolder5"),
+            imageHolder6 = document.getElementById("ImageHolder6"),
+            imageHolder7 = document.getElementById("ImageHolder7"),
+            imageHolder8 = document.getElementById("ImageHolder8"),
+            audioElement = document.getElementById("theAudio");
+        audioElement.onloadeddata = function () { };
+        var pointSqx, pointSqy, dimPointSqx, dimPointSqy, fractionOfDispSmall, fractionOfDispLarge, angleBC, leftImgBoxStartX, leftImgBoxStartY, rightImgBoxStartX, rightImgBoxStartY, leftImageBoxW, leftImageBoxH, rightImgBoxW, rightImgBoxH, imageBoxPadding, pointX, pointY, cx = new Array,
+            cy = new Array;
         window.onload = function () {
-
-
-            myCanvas = document.getElementById('myCanvas');
-            myCanvas.width = ww;
-            myCanvas.height = ww / 2;
-
-
-
-
-            w = myCanvas.width;
-            h = myCanvas.height;
-
-            //calculate r and R (radii) - *get canvas dimentions [leave margings from top and bottom and use rest for draw circles]
-            marginTop = 0.04;  // 4% of w
-            marginBotom = 0.1; // 10% of w
-            z = Math.sin(Math.PI / 8);
-            r = ((1 - (marginTop + marginBotom)) / 4) * (z / (z + 1)) * w;
-            R = ((1 - z) / z) * r;
-
-            // calculate center possitions of each circles
-            cx[0] = w / 2;	// centers of main circle
-            cy[0] = (h / 2) * (1 + marginTop - marginBotom);
-
-            for (var i = 0; i <= 7; i++) {
-                // creating x coordinates of centers
-                cx[i + 1] = cx[0] + (R + r) * Math.sin(i * (Math.PI / 4));
-            }
-
-            for (var i = 0; i <= 7; i++) {
-                // creating y coordinates of centers
-                cy[i + 1] = cy[0] + (R + r) * Math.cos(i * (Math.PI / 4));
-            }
-
-            // calculate dimentions of down square
-            pointSqx = cx[0] - (R + 3 * r);		// starting point
-            pointSqy = (cy[0] + r) + ((R + r) / (Math.sqrt(2)));
-            dimPointSqx = 6 * r + 2 * R;			// dimensions
-            dimPointSqy = 0.98 * h - pointSqy;
-
-            // get context of the canvas
-            context = myCanvas.getContext("2d");
-
-
-            // create image boxess
-            imageBoxPadding = 0.00 * h;
-            // create left image box
-            var d = (r - cy[1] + cy[8]) / r;
-            angleBC = Math.acos(d);
-            leftImgBoxStartX = pointSqx + imageBoxPadding;
-            leftImgBoxStartY = pointSqy + imageBoxPadding;
-            leftImageBoxH = dimPointSqy - 2 * imageBoxPadding;
-            leftImageBoxW = R + 3 * r - r * Math.sin(angleBC) - 2 * imageBoxPadding;
-
-            // create right image box
-            rightImgBoxStartX = cx[0] + r * Math.sin(angleBC) + imageBoxPadding;
-            rightImgBoxStartY = cy[1] + r * Math.cos(angleBC) + imageBoxPadding;
-            rightImgBoxH = leftImageBoxH;//- 2*imageBoxPadding already added;
-            rightImgBoxW = leftImageBoxW;//- 2*imageBoxPadding already added;
-
-            //create lower image box
-            var downImage = new Image();
-            downImage.src = "images/down.png";
-            downImage.addEventListener('load', function () {
-                context.drawImage(downImage, leftImgBoxStartX, leftImgBoxStartY, R * 2 + 6 * r - imageBoxPadding * 2, rightImgBoxH);
-            });
-
-            for (var i = 0; i <= cx.length; i++) {
-                //draw outer circle of each circles
-                context.beginPath();
-                context.strokeStyle = "rgba(255,255,255,1)";
-                context.fillStyle = "rgba(0,0,0,1)";
-                if (i == 0) {
-                    context.arc(cx[i], cy[i], R, Math.PI * 2, false);
-                } else {
-                    context.arc(cx[i], cy[i], r, Math.PI * 2, false);
+            (myCanvas = document.getElementById("myCanvas")).width = ww, myCanvas.height = ww / 2, w = myCanvas.width, h = myCanvas.height, marginTop = .04, marginBotom = .1, z = Math.sin(Math.PI / 8), R = (1 - z) / z * (r = (1 - (marginTop + marginBotom)) / 4 * (z / (z + 1)) * w), cx[0] = w / 2, cy[0] = h / 2 * (1 + marginTop - marginBotom);
+            for (var t = 0; t <= 7; t++) cx[t + 1] = cx[0] + (R + r) * Math.sin(t * (Math.PI / 4));
+            for (t = 0; t <= 7; t++) cy[t + 1] = cy[0] + (R + r) * Math.cos(t * (Math.PI / 4));
+            pointSqx = cx[0] - (R + 3 * r), pointSqy = cy[0] + r + (R + r) / Math.sqrt(2), dimPointSqx = 6 * r + 2 * R, dimPointSqy = .98 * h - pointSqy, context = myCanvas.getContext("2d"), imageBoxPadding = 0 * h;
+            var a = (r - cy[1] + cy[8]) / r;
+            angleBC = Math.acos(a), leftImgBoxStartX = pointSqx + imageBoxPadding, leftImgBoxStartY = pointSqy + imageBoxPadding, leftImageBoxH = dimPointSqy - 2 * imageBoxPadding, leftImageBoxW = R + 3 * r - r * Math.sin(angleBC) - 2 * imageBoxPadding, rightImgBoxStartX = cx[0] + r * Math.sin(angleBC) + imageBoxPadding, rightImgBoxStartY = cy[1] + r * Math.cos(angleBC) + imageBoxPadding, rightImgBoxH = leftImageBoxH, rightImgBoxW = leftImageBoxW;
+            var n = new Image;
+            n.src = "images/down.png", n.addEventListener("load", (function () {
+                context.drawImage(n, leftImgBoxStartX, leftImgBoxStartY, 2 * R + 6 * r - 2 * imageBoxPadding, rightImgBoxH)
+            }));
+            for (t = 0; t <= cx.length; t++) context.beginPath(), context.strokeStyle = "rgba(255,255,255,1)", context.fillStyle = "rgba(0,0,0,1)", 0 == t ? context.arc(cx[t], cy[t], R, 2 * Math.PI, !1) : context.arc(cx[t], cy[t], r, 2 * Math.PI, !1), context.stroke(), context.fill(), context.closePath();
+            fractionOfDispSmall = .6, fractionOfDispLarge = .1;
+            for (t = 0; t <= cx.length; t++) context.beginPath(), context.strokeStyle = "rgba(255,255,255,1)", context.fillStyle = "rgba(255,255,255,0.7)", 0 == t ? context.arc(cx[t], cy[t], R * fractionOfDispLarge, 2 * Math.PI, !1) : context.arc(cx[t], cy[t], r * fractionOfDispSmall, 2 * Math.PI, !1), context.stroke(), context.fill(), context.closePath();
+            var e = .88 * R * (1 - fractionOfDispLarge),
+                o = .004 * w,
+                i = .0038 * w,
+                c = .012 * w,
+                l = [12, 18, 30, 30, 48],
+                m = .003 * w,
+                g = .75 * m,
+                f = [12, 24, 36],
+                x = [.7, .8, .9],
+                d = new Image;
+            d.src = "images/a1.png", d.addEventListener("load", (function () {
+                context.drawImage(d, cx[8] - r * fractionOfDispSmall, cy[8] - r * fractionOfDispSmall, 2 * fractionOfDispSmall * r, 2 * fractionOfDispSmall * r)
+            }));
+            var s = new Image;
+            s.src = "images/a2.png", s.addEventListener("load", (function () {
+                context.drawImage(s, cx[7] - r * fractionOfDispSmall, cy[7] - r * fractionOfDispSmall, 2 * fractionOfDispSmall * r, 2 * fractionOfDispSmall * r)
+            }));
+            var I = new Image;
+            I.src = "images/a3.png", I.addEventListener("load", (function () {
+                context.drawImage(I, cx[6] - r * fractionOfDispSmall, cy[6] - r * fractionOfDispSmall, 2 * fractionOfDispSmall * r, 2 * fractionOfDispSmall * r)
+            }));
+            var p = new Image;
+            p.src = "images/a4.png", p.addEventListener("load", (function () {
+                context.drawImage(p, cx[5] - r * fractionOfDispSmall, cy[5] - r * fractionOfDispSmall, 2 * fractionOfDispSmall * r, 2 * fractionOfDispSmall * r)
+            }));
+            var M = new Image;
+            M.src = "images/a5.png", M.addEventListener("load", (function () {
+                context.drawImage(M, cx[4] - r * fractionOfDispSmall, cy[4] - r * fractionOfDispSmall, 2 * fractionOfDispSmall * r, 2 * fractionOfDispSmall * r)
+            }));
+            var P = new Image;
+            P.src = "images/a6.png", P.addEventListener("load", (function () {
+                context.drawImage(P, cx[3] - r * fractionOfDispSmall, cy[3] - r * fractionOfDispSmall, 2 * fractionOfDispSmall * r, 2 * fractionOfDispSmall * r)
+            }));
+            var y = new Image;
+            y.src = "images/a7.png", y.addEventListener("load", (function () {
+                context.drawImage(y, cx[2] - r * fractionOfDispSmall, cy[2] - r * fractionOfDispSmall, 2 * fractionOfDispSmall * r, 2 * fractionOfDispSmall * r)
+            }));
+            var S = new Image;
+            S.src = "images/a8.png", S.addEventListener("load", (function () {
+                context.drawImage(S, cx[1] - r * fractionOfDispSmall, cy[1] - r * fractionOfDispSmall, 2 * fractionOfDispSmall * r, 2 * fractionOfDispSmall * r)
+            }));
+            var v = new Image,
+                B = 2 * R * Math.sin(Math.atan(.5));
+            v.src = "images/budda_rupaya.png", v.addEventListener("load", (function () {
+                context.drawImage(v, cx[0] - R * Math.sin(Math.PI / 6) - .00365 * w, cy[0] - .019 * w, B + .018 * w, B + .02 * w)
+            }));
+            var D = dimPointSqy,
+                O = 2 * D,
+                u = new Image;
+            u.src = "images/MAKARA_left.png", u.addEventListener("load", (function () {
+                context.drawImage(u, pointSqx - O, pointSqy, O, D)
+            }));
+            var b = new Image;
+            b.src = "images/MAKARA_right.png", b.addEventListener("load", (function () {
+                context.drawImage(b, pointSqx + dimPointSqx, pointSqy, O, D)
+            }));
+            var H = 250;
+            setInterval((function () {
+                for (var t = 0; t < x.length; t++) {
+                    context.fillStyle = "rgba(" + 255 * Math.random() + "," + 255 * Math.random() + "," + 255 * Math.random() + ",0.9)";
+                    for (var a = 1; a < cx.length; a++)
+                        for (var n = 0; n < f[t]; n++) context.beginPath(), context.arc(cx[a] + r * x[t] * Math.cos(2 * Math.PI / f[t] * n), cy[a] + r * x[t] * Math.sin(2 * Math.PI / f[t] * n), m, 2 * Math.PI, !1), context.fill(), context.closePath()
                 }
-                context.stroke();
-                context.fill();
-                context.closePath();
-            }
-
-            fractionOfDispSmall = 0.6;
-            fractionOfDispLarge = 0.1;
-            for (var i = 0; i <= cx.length; i++) {
-                //draw inner circle of each circles
-                context.beginPath();
-                context.strokeStyle = "rgba(255,255,255,1)";
-                context.fillStyle = "rgba(255,255,255,0.7)";
-                if (i == 0) {
-                    context.arc(cx[i], cy[i], R * fractionOfDispLarge, Math.PI * 2, false);
-                } else {
-                    context.arc(cx[i], cy[i], r * fractionOfDispSmall, Math.PI * 2, false);
-                }
-                context.stroke();
-                context.fill();
-                context.closePath();
-            }
-
-            // Center circle inner Bulb animations set
-
-            var flowerCenter = 0.88 * R * (1 - fractionOfDispLarge);
-            var flowerCenterDotSize = 0.004 * w;
-            var flowerOuterDotSize = 0.0038 * w;
-            var flowerLevel1FormCenter = 0.012 * w;
-            var countOuterFlowers = 5;
-            // var flowerLevel2FormCenter = flowerLevel1FormCenter *2;
-
-            var centerCircleFlowerPattern = function () {
-                for (var i1 = 0; i1 < 8; i1++) {
-                    if (i1 == 2) {
-                        continue;
-                    } else {
-                        var flowerCenterAngle = Math.PI / 4 * i1; // 2*PI/8 = PI/4
-                        var flowerX = cx[0] + flowerCenter * Math.cos(flowerCenterAngle);
-                        var flowerY = cy[0] + flowerCenter * Math.sin(flowerCenterAngle);
-                        context.beginPath();
-                        context.fillStyle = "rgba(255,255,255," + Math.random() + ")";
-                        // context.clearRect(flowerX-flowerCenterDotSize,flowerY-flowerCenterDotSize,2*flowerOuterDotSize,flowerOuterDotSize*2);
-                        context.arc(flowerX, flowerY, flowerCenterDotSize, Math.PI * 2, false);
-                        context.fill();
-                        context.closePath();
-
-                        // flower level 1
-
-                        var red = 255 * Math.random();
-                        var intense = Math.random();
-
-                        for (var i2 = 0; i2 < countOuterFlowers; i2++) {
-                            var flowerOuterDotAngle = flowerCenterAngle + 2 * Math.PI / countOuterFlowers * i2;
-
-                            var level2posX = flowerX + flowerLevel1FormCenter * Math.cos(flowerOuterDotAngle);
-                            var level2posY = flowerY + flowerLevel1FormCenter * Math.sin(flowerOuterDotAngle);
-
-                            context.beginPath();
-                            context.fillStyle = "rgba(" + red + ",10,0," + intense + ")";
-                            context.arc(level2posX, level2posY, flowerOuterDotSize, Math.PI * 2, false);
-                            context.fill();
-                            context.closePath();
+            }), H), setInterval((function () {
+                for (var t = 0; t < 5; t++)
+                    for (var a = Math.random(), n = 0; n < l[t]; n++) {
+                        var e = 2 * Math.PI / l[t] * n;
+                        if (!(e > Math.PI / 4 && e < Math.PI / 4 * 3)) {
+                            var r = (2 + t) * fractionOfDispLarge * R,
+                                i = cx[0] + r * Math.cos(2 * Math.PI / l[t] * n),
+                                c = cy[0] + r * Math.sin(2 * Math.PI / l[t] * n);
+                            context.beginPath(), context.fillStyle = "rgba(10," + 255 * a + "," + 200 * Math.random() + ",0.6)", context.arc(i, c, .75 * o, 2 * Math.PI, !1), context.fill(), context.closePath()
                         }
                     }
-                }
-                // requestAnimationFrame(centerCircleFlowerPattern);
-            }
-
-            // center circle filler patern
-            var numberOfDotsEach = {
-                // line:[6,12,18,12,30,]
-                line: [12, 18, 30, 30, 48]
-            }
-            var centerCircleFillerPattern = function () {
-                for (var i4 = 0; i4 < 5; i4++) {
-                    var intensity2 = Math.random();
-                    for (var i3 = 0; i3 < numberOfDotsEach.line[i4]; i3++) {
-                        var plotAngle = 2 * Math.PI / numberOfDotsEach.line[i4] * i3;
-                        if (plotAngle > Math.PI / 4 && plotAngle < Math.PI / 4 * 3) {
-                            continue;
-                        } else {
-                            var localR = (2 + i4) * fractionOfDispLarge * R;
-                            var dotX = cx[0] + localR * Math.cos(2 * Math.PI / numberOfDotsEach.line[i4] * i3);
-                            var dotY = cy[0] + localR * Math.sin(2 * Math.PI / numberOfDotsEach.line[i4] * i3);
-
-                            context.beginPath();
-                            context.fillStyle = "rgba(10," + 255 * intensity2 + "," + Math.random() * 200 + ",0.6)";
-
-                            context.arc(dotX, dotY, flowerCenterDotSize * 0.75, 2 * Math.PI, false);
-                            context.fill();
-                            context.closePath();
+            }), H), setInterval((function () {
+                for (var t = 0; t < 8; t++)
+                    if (2 != t) {
+                        var a = Math.PI / 4 * t,
+                            n = cx[0] + e * Math.cos(a),
+                            r = cy[0] + e * Math.sin(a);
+                        context.beginPath(), context.fillStyle = "rgba(255,255,255," + Math.random() + ")", context.arc(n, r, o, 2 * Math.PI, !1), context.fill(), context.closePath();
+                        for (var l = 255 * Math.random(), m = Math.random(), g = 0; g < 5; g++) {
+                            var f = a + 2 * Math.PI / 5 * g,
+                                x = n + c * Math.cos(f),
+                                d = r + c * Math.sin(f);
+                            context.beginPath(), context.fillStyle = "rgba(" + l + ",10,0," + m + ")", context.arc(x, d, i, 2 * Math.PI, !1), context.fill(), context.closePath()
                         }
                     }
+            }), 125), setInterval((function () {
+                for (var t = .625 * Math.PI - Math.acos(1 / 1.1), a = 0, n = 3; n <= 7; n++) {
+                    for (var e = -8; e < 8; e++) context.fillStyle = "rgba(" + 255 * Math.random() + ",255,255,0.5)", pointX = cx[n] + 1.1 * r * Math.cos(-a * Math.PI / 4 + t / 8 * e), pointY = cy[n] + 1.1 * r * Math.sin(-a * Math.PI / 4 + t / 8 * e), context.beginPath(), context.arc(pointX, pointY, m, 2 * Math.PI, !1), context.fill(), context.closePath();
+                    a++
                 }
-                // console.log('px' + i3);
-                // requestAnimationFrame(centerCircleFillerPattern);
-            }
-
-            // small circles inner Bulb animations set
-            var intensity = 0.9;
-            var dotSize = 0.003 * w;
-            var dotSizeMedium = 0.75 * dotSize;
-            var dotsForSmallCircle = {
-                numberOfDots: [12, 24, 36],
-                radii: [0.7, 0.8, 0.9]
-            };
-            var drawInnerCirclePattern = function () {
-
-                for (var k = 0; k < dotsForSmallCircle.radii.length; k++) {
-                    // context.strokeStyle = "rgba(255,255,255,"+intensity+")";
-                    context.fillStyle = "rgba(" + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + "," + intensity + ")";
-                    for (var j = 1; j < cx.length; j++) {
-                        for (var i = 0; i < dotsForSmallCircle.numberOfDots[k]; i++) {
-                            context.beginPath();
-
-
-                            context.arc(cx[j] + r * dotsForSmallCircle.radii[k] * Math.cos(2 * Math.PI / dotsForSmallCircle.numberOfDots[k] * i),
-                                cy[j] + r * dotsForSmallCircle.radii[k] * Math.sin(2 * Math.PI / dotsForSmallCircle.numberOfDots[k] * i),
-                                dotSize,
-                                Math.PI * 2,
-                                false);
-
-                            context.fill();
-                            context.closePath();
-                        }
+                var o = Math.acos(.9 / 1.1),
+                    i = Math.PI / 4 - t,
+                    c = (Math.PI, (-i + o) / 8);
+                for (a = 0; a <= 9; a++) pointX = cx[2] + 1.1 * r * Math.cos(i + c * a), pointY = cy[2] + 1.1 * r * Math.sin(i + c * a), context.fillStyle = "rgba(" + 255 * Math.random() + ",255,255,0.5)", context.beginPath(), context.arc(pointX, pointY, m, 2 * Math.PI, !1), context.fill(), context.closePath(), pointX = 2 * cx[0] - pointX, context.beginPath(), context.arc(pointX, pointY, m, 2 * Math.PI, !1), context.fill(), context.closePath();
+                for (var l = cx[2] + 1.1 * r * Math.sin(o), g = cy[2] + 1.1 * r * Math.cos(o), f = cx[0] + R + 3 * r, x = (f - l) / 12, d = l; d <= f; d += x) context.fillStyle = "rgba(" + 255 * Math.random() + ",255,255,0.5)", context.beginPath(), context.arc(d, g, m, 2 * Math.PI, !1), context.fill(), context.closePath(), context.beginPath(), context.arc(2 * cx[0] - d, g, m, 2 * Math.PI, !1), context.fill(), context.closePath(), d
+            }), H), setInterval((function () {
+                var t, a, n, e;
+                fr = .1;
+                for (var o = [2, 2, 3, 4, 2, 1], r = 1; r < cx.length - 2; r++)
+                    for (var i = -3; i < 3; i++) {
+                        pointX = cx[0] + R * (1 + fr * i) * Math.sin(t), pointY = cy[0] + R * (1 + fr * i) * Math.cos(t), t = (1 + 2 * r) * Math.PI / 8, context.fillStyle = "rgba(0," + 255 * Math.random() + ",255,0.8)", context.beginPath(), context.arc(pointX, pointY, g, 2 * Math.PI, !1), context.fill(), context.closePath();
+                        for (var c = 0; c < o[i + 3]; c++) e = t + c * Math.PI / 36, a = cx[0] + R * (1 + fr * i) * Math.sin(e), n = cy[0] + R * (1 + fr * i) * Math.cos(e), context.beginPath(), context.arc(a, n, g, 2 * Math.PI, !1), context.fill(), context.closePath(), e = t - c * Math.PI / 36, x2 = cx[0] + R * (1 + fr * i) * Math.sin(e), y2 = cy[0] + R * (1 + fr * i) * Math.cos(e), context.beginPath(), context.arc(x2, y2, g, 2 * Math.PI, !1), context.fill(), context.closePath()
                     }
-                }
-                // requestAnimationFrame(drawInnerCirclePattern);
-            }
+            }), H)
+        };
 
-            var drawOuterLine = function () {
-                var numberOfDotsOuterRing = 8;
-                var fr = 0.1;
-
-
-                var alpha = 0.625 * Math.PI - Math.acos(1 / (1 + fr));
-                var k = 0;
-
-
-                for (var j = 3; j <= 7; j++) {
-                    for (var i = -numberOfDotsOuterRing; i < numberOfDotsOuterRing; i++) {
-                        context.fillStyle = "rgba(" + 255 * Math.random() + ",255,255,0.5)";
-                        pointX = cx[j] + r * (1 + fr) * Math.cos(-k * Math.PI / 4 + alpha / numberOfDotsOuterRing * i);
-                        pointY = cy[j] + r * (1 + fr) * Math.sin(-k * Math.PI / 4 + alpha / numberOfDotsOuterRing * i);
-
-                        context.beginPath();
-                        context.arc(pointX, pointY, dotSize, Math.PI * 2, false);
-                        context.fill();
-                        context.closePath();
-                    }
-                    k++;
-                }
-
-                // right corner
-                var beta = Math.acos((1 - fr) / (1 + fr));
-
-                var rightStartAngle = Math.PI / 4 - alpha;
-
-                var fullAngle = 0.75 * Math.PI - (alpha + beta);
-
-
-                var delta = ((-rightStartAngle + beta) / numberOfDotsOuterRing);
-
-
-                for (var k = 0; k <= (numberOfDotsOuterRing + 1); k++) {
-
-                    pointX = cx[2] + (1 + fr) * r * Math.cos(rightStartAngle + delta * k);
-                    pointY = cy[2] + (1 + fr) * r * Math.sin(rightStartAngle + delta * k);
-
-                    context.fillStyle = "rgba(" + 255 * Math.random() + ",255,255,0.5)";
-                    context.beginPath();
-                    context.arc(pointX, pointY, dotSize, Math.PI * 2, false);
-                    context.fill();
-                    context.closePath();
-
-                    //mirror for left side
-                    pointX = 2 * cx[0] - pointX;
-                    context.beginPath();
-                    context.arc(pointX, pointY, dotSize, Math.PI * 2, false);
-                    context.fill();
-                    context.closePath();
-                }
-
-                // drow box outline
-                var boxUpperStertX = cx[2] + (1 + fr) * r * Math.sin(beta);
-                var boxUpperStertY = cy[2] + (1 + fr) * r * Math.cos(beta);
-                var boxUpperEndX = cx[0] + R + (3) * r;
-                var boxUpperLastX;
-
-                var boxUpperNumberOfDots = 12;
-                var boxUpperDeltaX = (boxUpperEndX - boxUpperStertX) / boxUpperNumberOfDots;
-                for (var x = boxUpperStertX; x <= boxUpperEndX; x = x + boxUpperDeltaX) {
-                    context.fillStyle = "rgba(" + 255 * Math.random() + ",255,255,0.5)";
-                    context.beginPath();
-                    context.arc(x, boxUpperStertY, dotSize, Math.PI * 2, false);
-                    context.fill();
-                    context.closePath();
-
-                    context.beginPath();
-                    context.arc(cx[0] * 2 - x, boxUpperStertY, dotSize, Math.PI * 2, false);
-                    context.fill();
-                    context.closePath();
-                    boxUpperLastX = x;
-
-                }
-
-            }
-
-            //draw fill triangle between circles
-            var filTriangle = function () {
-                // var i=1;
-                fr = 0.1;
-                // var frd = 1+fr;
-                var plotAngle;
-                // var r2 = 4*dotSizeMedium;
-                var x1, y1, newAngle;
-                var dotNumbers = [2, 2, 3, 4, 2, 1];
-
-                for (var i = 1; i < cx.length - 2; i++) {
-                    for (var i4 = -3; i4 < 3; i4++) {
-                        // console.log(i4);
-                        pointX = cx[0] + R * (1 + fr * i4) * Math.sin(plotAngle);
-                        pointY = cy[0] + R * (1 + fr * i4) * Math.cos(plotAngle);
-
-                        plotAngle = (1 + 2 * i) * Math.PI / 8;
-                        context.fillStyle = "rgba(0," + Math.random() * 255 + ",255,0.8)";
-                        context.beginPath();
-                        context.arc(pointX, pointY, dotSizeMedium, Math.PI * 2, false);
-                        context.fill();
-                        context.closePath();
-
-                        for (var k = 0; k < dotNumbers[i4 + 3]; k++) {
-                            newAngle = plotAngle + k * Math.PI / 36; // -> 180/36 = 5 degree. 
-                            x1 = cx[0] + R * (1 + fr * i4) * Math.sin(newAngle);
-                            y1 = cy[0] + R * (1 + fr * i4) * Math.cos(newAngle);
-
-                            // context.fillStyle = "rgba("+Math.random()*255+",255,0,0.8)";
-                            context.beginPath();
-                            context.arc(x1, y1, dotSizeMedium, Math.PI * 2, false);
-                            context.fill();
-                            context.closePath();
-
-                            newAngle = plotAngle - k * Math.PI / 36; // -> 180/36 = 5 degree.
-
-                            x2 = cx[0] + R * (1 + fr * i4) * Math.sin(newAngle);
-                            y2 = cy[0] + R * (1 + fr * i4) * Math.cos(newAngle);
-                            // context.fillStyle = "rgba("+Math.random()*255+",255,0,0.8)";
-                            context.beginPath();
-                            context.arc(x2, y2, dotSizeMedium, Math.PI * 2, false);
-                            context.fill();
-                            context.closePath();
-                        }
-                    }
-                }
-            }
-            // filTriangle();
-
-            var image1 = new Image();
-            image1.src = "images/a1.png";
-            image1.addEventListener('load', function () {
-                context.drawImage(image1, (cx[8] - r * fractionOfDispSmall), (cy[8] - r * fractionOfDispSmall), fractionOfDispSmall * 2 * r, fractionOfDispSmall * 2 * r);
-
-            });
-
-            var image2 = new Image();
-            image2.src = "images/a2.png";
-            image2.addEventListener('load', function () {
-                context.drawImage(image2, (cx[7] - r * fractionOfDispSmall), (cy[7] - r * fractionOfDispSmall), fractionOfDispSmall * 2 * r, fractionOfDispSmall * 2 * r);
-            });
-
-            var image3 = new Image();
-            image3.src = "images/a3.png";
-            image3.addEventListener('load', function () {
-                context.drawImage(image3, (cx[6] - r * fractionOfDispSmall), (cy[6] - r * fractionOfDispSmall), fractionOfDispSmall * 2 * r, fractionOfDispSmall * 2 * r);
-            });
-
-            var image4 = new Image();
-            image4.src = "images/a4.png";
-            image4.addEventListener('load', function () {
-                context.drawImage(image4, (cx[5] - r * fractionOfDispSmall), (cy[5] - r * fractionOfDispSmall), fractionOfDispSmall * 2 * r, fractionOfDispSmall * 2 * r);
-            });
-
-            var image5 = new Image();
-            image5.src = "images/a5.png";
-            image5.addEventListener('load', function () {
-                context.drawImage(image5, (cx[4] - r * fractionOfDispSmall), (cy[4] - r * fractionOfDispSmall), fractionOfDispSmall * 2 * r, fractionOfDispSmall * 2 * r);
-            });
-
-            var image6 = new Image();
-            image6.src = "images/a6.png";
-            image6.addEventListener('load', function () {
-                context.drawImage(image6, (cx[3] - r * fractionOfDispSmall), (cy[3] - r * fractionOfDispSmall), fractionOfDispSmall * 2 * r, fractionOfDispSmall * 2 * r);
-            });
-
-            var image7 = new Image();
-            image7.src = "images/a7.png";
-            image7.addEventListener('load', function () {
-                context.drawImage(image7, (cx[2] - r * fractionOfDispSmall), (cy[2] - r * fractionOfDispSmall), fractionOfDispSmall * 2 * r, fractionOfDispSmall * 2 * r);
-            });
-
-            var image8 = new Image();
-            image8.src = "images/a8.png";
-            image8.addEventListener('load', function () {
-                context.drawImage(image8, (cx[1] - r * fractionOfDispSmall), (cy[1] - r * fractionOfDispSmall), fractionOfDispSmall * 2 * r, fractionOfDispSmall * 2 * r);
-            });
-
-
-            var imageCenter = new Image();
-            var dim = 2 * R * Math.sin(Math.atan(0.5));
-            imageCenter.src = "images/budda_rupaya.png";
-            imageCenter.addEventListener('load', function () {
-                context.drawImage(imageCenter, (cx[0] - R * Math.sin(Math.PI / 6) - w * 0.00365), cy[0] - 0.019 * w, dim + 0.018 * w, dim + 0.02 * w);
-
-            });
-
-
-
-            var makara_height = dimPointSqy;
-            var makara_width = makara_height * 2;
-
-            var imageMakaraleft = new Image();
-            imageMakaraleft.src = 'images/MAKARA_left.png';
-            imageMakaraleft.addEventListener('load', function () {
-                context.drawImage(imageMakaraleft, pointSqx - makara_width, pointSqy, makara_width, makara_height);
-            });
-
-            var imageMakaraRight = new Image();
-            imageMakaraRight.src = 'images/MAKARA_right.png';
-            imageMakaraRight.addEventListener('load', function () {
-                context.drawImage(imageMakaraRight, pointSqx + dimPointSqx, pointSqy, makara_width, makara_height);
-            });
-
-
-
-            //start patterns to run:
-            // drawInnerCirclePattern();
-            var triggerTime = 250;
-            setInterval(drawInnerCirclePattern, triggerTime);
-            // centerCircleFillerPattern();
-            setInterval(centerCircleFillerPattern, triggerTime);
-            // centerCircleFlowerPattern();
-            setInterval(centerCircleFlowerPattern, triggerTime / 2);
-            // drawOuterLine()
-            setInterval(drawOuterLine, triggerTime);
-            //filTriangle()
-            setInterval(filTriangle, triggerTime);
-        }
     </script>
 
 

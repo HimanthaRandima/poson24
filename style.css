@@ -229,6 +229,43 @@ nav {
 
 
 
+  .gallery {
+    display: flex;
+    width: ;
+    gap: 1rem;
+    max-width: 30rem;
+  }
+
+  .card {
+    position: relative;
+    left: 0;
+    width: 6rem;
+    border-radius: 1.2rem;
+    height: 20rem;
+    overflow: hidden;
+    margin-top: 2rem;
+    background-color: var(--background);
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    flex: 0.25;
+  }
+
+  .card img {
+    position: relative;
+    height: 20rem;
+    object-fit: unset;
+  }
+
+  .card:hover {
+    flex: 2;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 1rem;
+  }
+  
+
+
+
   .back {
     background-color: transparent;
     backdrop-filter: blur(10px);
@@ -247,7 +284,13 @@ nav {
   h1 {
     text-align: center;
     color: #a8a8a8;
-    
+
+  }
+
+  .img_gal {
+    max-width: 1000px;
+    text-align: center;
+    border-radius: 100px;
   }
 
   form {
@@ -271,7 +314,7 @@ nav {
       font-family: 'Popins', sans-serif;
       box-shadow: 4px 0 32px 0 #eec9453a;
       resize: none;
-  
+
 
       &:focus {
         box-shadow: 4px 0 32px 0 #eec9453a;
